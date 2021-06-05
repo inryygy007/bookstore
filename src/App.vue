@@ -17,11 +17,5 @@ export default {
 </script>
 
 <style lang="scss" scope>
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-color: #fff;
-}
+
 </style>

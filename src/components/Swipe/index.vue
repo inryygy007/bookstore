@@ -30,7 +30,7 @@ export default {
           }
         });
     },
-    // 轮播图按钮
+    //点击跳转到轮播的作品
     lunbo(id) {
       this.$router.push({ name: 'book', params: { id: id } });
     },

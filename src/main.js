@@ -6,16 +6,22 @@ import store from './store'
 // 应用mintui
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
-// element
-// import ElementUI from 'element-ui'
-// import 'element-ui/lib/theme-chalk/index.css'
+
 import './font/fonts.js'
+
 import './font/fonts.css'
+
+// mui
+import './components/lib/mui/css/mui.css'
+import mui from './components/lib/mui/js/mui.min.js'
+import './components/lib/mui/fonts/mui.ttf'
+
 // axios
 import axios from 'axios'
 axios.defaults.headers.post['Content-type'] = 'application/json'
 Vue.prototype.$axios = axios
-// Vue.use(ElementUI)
+Vue.prototype.mui = mui
+
 Vue.use(Mint)
 Vue.config.productionTip = false
 
