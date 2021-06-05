@@ -1,9 +1,9 @@
 <template>
-  <router-view></router-view>
-  <!-- <hello></hello> -->
+<Homepage/>
+  <!-- <router-view></router-view> -->
 </template>
 <script>
-// import Hello from './components/HelloWorld.vue'
+import Homepage from './views/tabbar/Homepage.vue';
 export default {
   data() {
     return {
@@ -11,7 +11,7 @@ export default {
     };
   },
   components: {
-    // Hello
+    Homepage
   }
 };
 </script>

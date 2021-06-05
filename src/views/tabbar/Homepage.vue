@@ -11,12 +11,27 @@
         </svg>
       </mt-button>
     </mt-header>
-    <!-- 轮播图 -->
-    <Swipe />
+    <keep-alive>
+      <transition>
+        <router-view
+          v-if="$route.meta.keepAlive"
+          :appref="$refs"
+          @fangfa="show"
+        ></router-view>
+      </transition>
+    </keep-alive>
+    <transition>
+      <router-view
+        v-if="!$route.meta.keepAlive"
+        :appref="$refs"
+        @fangfa="show"
+      ></router-view>
+    </transition>
+
     <!-- 底部导航 -->
     <mt-tabbar ref="tabbar" v-if="fag" fixed>
       <mt-tab-item>
-        <router-link :to="{ name: 'home' }" tag="div">
+        <router-link :to="{ name: 'Homepage' }" tag="div">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-shouye"></use>
           </svg>
@@ -49,13 +64,14 @@
       </mt-tab-item>
     </mt-tabbar>
   </div>
+  
 </template>
 <script>
-import '../font/fonts-user';
-import Swipe from '../components/Swipe';
+import '../../font/fonts-user';
+// import Swipe from '../components/Swipe';
 export default {
   //注册轮播图组件
-  components: { Swipe },
+  // components: { Swipe },
   data() {
     return {
       flag: true,
@@ -70,7 +86,10 @@ export default {
     // 返回按钮
     getback() {},
     //用户头像按钮
-    getuser() {}
+    getuser() {},
+    show(data){
+      this.fag=data;
+    },
   }
 };
 </script>
@@ -99,7 +118,6 @@ export default {
       font-size: 12px;
     }
   }
-  
 }
 </style>
 
