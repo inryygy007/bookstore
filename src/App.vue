@@ -1,17 +1,27 @@
 <template>
- <router-view></router-view>
-<!-- <hello></hello> -->
+  <router-view></router-view>
+  <!-- <hello></hello> -->
 </template>
 <script>
 // import Hello from './components/HelloWorld.vue'
 export default {
-  data () {
+  data() {
     return {
-    flag:false  
-    }
+      flag: false
+    };
   },
- components:{
-  // Hello
- }
-}
+  components: {
+    // Hello
+  }
+};
 </script>
+
+<style lang="scss" scope>
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #fff;
+}
+</style>
