@@ -1,8 +1,9 @@
 <template>
-<hello></hello>
+ <router-view></router-view>
+<!-- <hello></hello> -->
 </template>
 <script>
-import Hello from './components/HelloWorld.vue'
+// import Hello from './components/HelloWorld.vue'
 export default {
   data () {
     return {
@@ -10,7 +11,7 @@ export default {
     }
   },
  components:{
-  Hello
+  // Hello
  }
 }
 </script>

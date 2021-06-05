@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import hello from './components/HelloWorld.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      component: hello
+      //路由懒加载
+      component: ()=> import('../views/Home.vue')
     },
   ]
 })
+
