@@ -68,10 +68,7 @@
 </template>
 <script>
 import '../../font/fonts-user';
-// import Swipe from '../components/Swipe';
 export default {
-  //注册轮播图组件
-  // components: { Swipe },
   data() {
     return {
       flag: true,
@@ -84,9 +81,14 @@ export default {
   },
   methods: {
     // 返回按钮
-    getback() {},
+    getback() {
+      console.log('返回');
+    },
     //用户头像按钮
-    getuser() {},
+    getuser() {
+      console.log('用户');
+    },
+    //
     show(data){
       this.fag=data;
     },
