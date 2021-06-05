@@ -11,15 +11,51 @@
         </svg>
       </mt-button>
     </mt-header>
-    <Swipe/>
+    <!-- 轮播图 -->
+    <Swipe />
+    <!-- 底部导航 -->
+    <mt-tabbar ref="tabbar" v-if="fag" fixed>
+      <mt-tab-item>
+        <router-link :to="{ name: 'home' }" tag="div">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-shouye"></use>
+          </svg>
+          <h1>首页</h1>
+        </router-link>
+      </mt-tab-item>
+      <mt-tab-item>
+        <router-link :to="{ name: 'bookrack' }" tag="div">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon--"></use>
+          </svg>
+          <h1>书架</h1>
+        </router-link>
+      </mt-tab-item>
+      <mt-tab-item>
+        <router-link :to="{ name: 'classify' }" tag="div">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-fenlei"></use>
+          </svg>
+          <h1>分类</h1>
+        </router-link>
+      </mt-tab-item>
+      <mt-tab-item>
+        <router-link :to="{ name: 'rank' }" tag="div">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-paihangbang-"></use>
+          </svg>
+          <h1>排行</h1>
+        </router-link>
+      </mt-tab-item>
+    </mt-tabbar>
   </div>
 </template>
 <script>
 import '../font/fonts-user';
-import Swipe from '../components/Swipe'
+import Swipe from '../components/Swipe';
 export default {
   //注册轮播图组件
-  components:{Swipe},
+  components: { Swipe },
   data() {
     return {
       flag: true,
@@ -50,6 +86,20 @@ export default {
     height: 30px;
     background-color: #00c98c;
   }
+  //底部区域
+  .mint-tab-item {
+    padding: 0;
+  }
+  .mint-tabbar > .mint-tab-item.is-selected {
+    color: #555;
+    background-color: #efeff4;
+  }
+  .mint-tab-item-label {
+    h1 {
+      font-size: 12px;
+    }
+  }
+  
 }
 </style>
 
