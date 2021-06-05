@@ -6,7 +6,17 @@
     <!-- 搜索 -->
     <Search></Search>
 
-    
+    <!-- 分类 -->
+    <div class="con" v-for="item in booktitle" :key="item.id">
+      <p class="p1">{{ item.title }}</p>
+      <mei-wen :booklistid="{ id: item._id }"></mei-wen>
+      <div class="shux">
+        <router-link :to="{ name: 'list', params: { id: item._id } }" tag="p">
+          加载更多
+          <!-- <span class="el-icon-refresh"></span> -->
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,7 +26,9 @@ import Search from '../../components/Search/index';
 export default {
   data() {
     return {
-      booklunbo: {}
+      booktitle: {},
+      nslist: {},
+      booklist: {}
     };
   },
   components: {
@@ -28,18 +40,31 @@ export default {
   },
   methods: {
     getbook() {
-      // 轮播数据
+      // 首页分类数据
       this.$axios
-        .get('/api/recommendPage/node/spread/575f74f27a4a60dc78a435a3?pl=ios')
+        .get('/api/recommendPage/nodes/5910018c8094b1e228e5868f')
         .then((res) => {
-          //  console.log(res)
+          var arr = res.data.data;
           if (res.data.ok) {
-            this.booklunbo = res.data.data.slice(1, 5);
+            this.booktitle = arr.filter((item) => {
+              return item.title != 'm站顶部banner';
+            });
           }
         });
+
+      this.$axios.get('/api/ranking/54d43437d47d13ff21cad58b').then((res) => {
+        if (res.data.ok) {
+          this.nslist = this.imgurl(res.data.ranking.books.slice(8, 12));
+        }
+      });
     },
-    lunbo(id) {
-      this.$router.push({ name: 'book', params: { id: id } });
+    // 解决图片加载问题
+    imgurl(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].cover = unescape(arr[i].cover);
+        arr[i].cover = arr[i].cover.replace('/agent/', '');
+      }
+      return arr;
     }
   }
 };
@@ -47,10 +72,8 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  .mint-swipe {
-    height: 120px;
-  }
- .con{
+  //分类区域
+  .con {
     margin-top: 10px;
   }
   .p1 {
@@ -59,9 +82,6 @@ export default {
     border-left: 2px solid #00c98c;
     padding-left: 10px;
     margin-bottom: 10px;
-  }
-  img {
-    width: 100%;
   }
   .shux {
     //   border-top: 1px solid #EAEAEA;

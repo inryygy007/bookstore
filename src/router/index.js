@@ -40,6 +40,14 @@ export default new Router({
         keepAlive: true // 需要被缓存
       }
     },
+
+
+    {
+      path: '/list:id',
+      name: 'list',
+      component: resolve => require(['../components/read/List'], resolve)
+    },
+
   ],
   linkActiveClass: 'gaoliang'
 })
