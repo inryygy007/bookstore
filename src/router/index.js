@@ -11,8 +11,8 @@ export default new Router({
       component: resolve => require(['../views/tabbar/Home.vue'], resolve)
     },
     {
-      path: '/Homepage',
-      name: 'Homepage',
+      path: '/Home',
+      name: 'Home',
       component: resolve => require(['../views/tabbar/Home.vue'], resolve),
       meta: {
         keepAlive: true // 需要被缓存

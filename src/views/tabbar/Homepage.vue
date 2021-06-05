@@ -31,7 +31,7 @@
     <!-- 底部导航 -->
     <mt-tabbar ref="tabbar" v-if="fag" fixed>
       <mt-tab-item>
-        <router-link :to="{ name: 'Homepage' }" tag="div">
+        <router-link :to="{ name: 'Home' }" tag="div">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-shouye"></use>
           </svg>
