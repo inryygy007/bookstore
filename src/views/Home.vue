@@ -11,11 +11,15 @@
         </svg>
       </mt-button>
     </mt-header>
+    <Swipe/>
   </div>
 </template>
 <script>
 import '../font/fonts-user';
+import Swipe from '../components/Swipe'
 export default {
+  //注册轮播图组件
+  components:{Swipe},
   data() {
     return {
       flag: true,
