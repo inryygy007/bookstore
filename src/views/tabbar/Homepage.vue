@@ -82,11 +82,11 @@ export default {
   methods: {
     // 返回按钮
     getback() {
-      console.log('返回');
+      this.$router.go(-1);
     },
     //用户头像按钮
     getuser() {
-      console.log('用户');
+     this.$router.push({name:'user'})
     },
     //
     show(data){

@@ -72,6 +72,15 @@ export default new Router({
       }
     },
 
+    //用户
+    {
+      path: '/user',
+      name: 'user',
+      component: resolve => require(['../components/read/User.vue'], resolve),
+      meta: {
+        keepAlive: true // 缓存
+      }
+    }
   ],
   linkActiveClass: 'gaoliang'
 })
