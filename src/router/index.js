@@ -5,6 +5,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    //主页
     {
       path: '/',
       redirect: '/Home',
@@ -41,12 +42,23 @@ export default new Router({
       }
     },
 
-
+    // 加载更多
     {
       path: '/list:id',
       name: 'list',
       component: resolve => require(['../components/read/List'], resolve)
     },
+
+    {
+      path: '/book:id',
+      name: 'book',
+      // component: Book,
+      component: resolve => require(['../components/Book/index.vue'], resolve),
+      meta: {
+        keepAlive: true // 缓存
+      }
+    },
+
 
   ],
   linkActiveClass: 'gaoliang'

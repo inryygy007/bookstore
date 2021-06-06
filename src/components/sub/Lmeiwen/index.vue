@@ -121,12 +121,6 @@ export default {
     }
     .mui-text-right {
       p {
-        //  display: -webkit-box;
-        // -webkit-line-clamp: 1;
-        // -webkit-box-orient: vertical;
-        // word-break: break-all;
-        // text-overflow: ellipsis;
-        // overflow: hidden;
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
