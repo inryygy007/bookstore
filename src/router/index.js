@@ -20,27 +20,6 @@ export default new Router({
       }
       
     },
-     //书架
-     {
-      path: '/bookrack',
-      name: 'bookrack',
-      component: resolve => require(['../views/tabbar/Bookrack'], resolve)
-    },
-    //分类
-    {
-      path: '/classify',
-      name: 'classify',
-      component: resolve => require(['../views/tabbar/Classify.vue'], resolve)
-    },
-    // 排行
-    {
-      path: '/rank',
-      name: 'rank',
-      component: resolve => require(['../views/tabbar/Rank'], resolve),
-      meta: {
-        keepAlive: true // 需要被缓存
-      }
-    },
 
     // 加载更多
     {
@@ -62,6 +41,35 @@ export default new Router({
       path: '/read',
       name: 'read',
       component: resolve => require(['../components/read/Read'], resolve)
+    },
+
+     //书架
+     {
+      path: '/bookrack',
+      name: 'bookrack',
+      component: resolve => require(['../views/tabbar/Bookrack'], resolve)
+    },
+    //分类
+    {
+      path: '/classify',
+      name: 'classify',
+      component: resolve => require(['../views/tabbar/Classify.vue'], resolve)
+    },
+    {
+      path: '/clylist/:major:gender',
+      name: 'clylist',
+      component: resolve => require(['../components/read/Clylist.vue'], resolve)
+    },
+
+
+    // 排行
+    {
+      path: '/rank',
+      name: 'rank',
+      component: resolve => require(['../views/tabbar/Rank'], resolve),
+      meta: {
+        keepAlive: true // 需要被缓存
+      }
     },
 
   ],
