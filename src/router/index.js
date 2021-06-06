@@ -44,21 +44,25 @@ export default new Router({
 
     // 加载更多
     {
-      path: '/list:id',
+      path: '/list',
       name: 'list',
       component: resolve => require(['../components/read/List'], resolve)
     },
-
+    // 书详情
     {
       path: '/book:id',
       name: 'book',
-      // component: Book,
       component: resolve => require(['../components/Book/index.vue'], resolve),
       meta: {
         keepAlive: true // 缓存
       }
     },
-
+    //阅读
+    {
+      path: '/read',
+      name: 'read',
+      component: resolve => require(['../components/read/Read'], resolve)
+    },
 
   ],
   linkActiveClass: 'gaoliang'
