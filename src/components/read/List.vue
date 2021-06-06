@@ -43,6 +43,7 @@ export default {
           if (res.status === 200) {
             res.data.data.forEach(item => {
               this.booklist.push(item.book);
+
             });
           }
         });

@@ -14,6 +14,7 @@ module.exports = {
       },
       '/content': {
         target: 'http://chapterup.zhuishushenqi.com',
+        // target: 'http://www.hyckr.com/content',
         changeOrigin: true,
         ws: true,
         pathRewrite: {

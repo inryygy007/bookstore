@@ -3,6 +3,7 @@ import axios from 'axios'
 // export function chapterContent (link) {
 //   return axios.get(`/content/chapter/${link}`)
 // }
+//  bookcontent, bookmulu, bookhy 
 // 书籍信息
 export function book(id) {
   return axios.get(`/api/btoc?view=summary&book=${id}`)
